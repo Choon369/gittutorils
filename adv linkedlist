@@ -1,0 +1,22 @@
+import java.util.*; //use of util package
+class LL
+{
+    LinkedList<String> list= new LinkedList();   // linked list type is being used 
+     
+    public static void main(String[] args)
+    {
+        LinkedList<String> list= new LinkedList();
+        list.addFirst("smart");
+        list.addFirst("Satya ");                             // use of various collection methods addFirst(),addLast(),removeLast(),get()
+        list.addLast("Swarup");
+        list.addLast("Sahu");
+        //System.out.print(list +"-->");
+        //System.out.print(list.size());
+        
+        for( int i = 0; i<list.size(); i++)
+        {
+            System.out.print(list.get(i) +"-->");
+        }
+        System.out.println("Null");
+    }
+}
