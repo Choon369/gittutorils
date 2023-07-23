@@ -1,0 +1,75 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+Linked list are the chain of node connected with each others by next address
+
+class LL { // an LL class is created
+    Node head;          //The first node is named as head remember never to change the head node during manipulation
+    class Node //a node class is created 
+    {
+        String data ; //data to be stored 
+        Node next;    //store the address of the next node
+        Node(String data)    // A constructor helps in object creation and have same name as the class.
+        {
+            this.data = data;    //provide the value to the data and next (address) as a singular node the next always points to null
+            this.next = null;
+        }
+    }
+    public  void addFirst(String data)      //add an node at first of the linked list 
+    {
+        Node newNode = new Node(data);
+        if(head == null)
+        {
+            head= newNode;                           //case for if no node is present
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+    public  void addLast(String data)       // add an node at the last of the linked list
+    {
+        Node newNode = new Node(data);
+        if(head == null)
+        {
+            head = newNode;                 // if no node is present new node becomes the head node
+            return;
+        }
+        Node currnode = head;
+        while(currnode.next!=null)
+        {
+            currnode =currnode.next;        // traversing with the help of currnode until next address to null
+        }
+        currnode.next = newNode;
+        
+        
+    }
+    public void printList()   // printing of the linked list
+    {
+        
+        if(head == null)
+        {
+            System.out.println("This list is empty");
+            
+        }
+        Node currnode = head;
+        while(currnode != null)
+        {
+            System.out.print(currnode.data + "-->");      //*dataa is being accessed using currnode.data
+            currnode = currnode.next;
+            
+        }
+        System.out.println("Null");
+    }
+    
+    
+    public static void main(String[] args)
+    {
+        LL list = new LL();                    /// A very imp step is to create a list is to create an object class name here LL is the class and list of name "list" is created
+        list.addFirst("satya");
+        list.addFirst("Smart");
+        list.addLast("Sahu");
+        list.printList();
+        
+    }
+    
+    
+}
