@@ -14,6 +14,8 @@ class LL { // an LL class is created
             this.next = null;
         }
     }
+
+/// Addition of nodes to the linked list from the starting and from the end of the list
     public  void addFirst(String data)      //add an node at first of the linked list 
     {
         Node newNode = new Node(data);
@@ -59,7 +61,40 @@ class LL { // an LL class is created
         }
         System.out.println("Null");
     }
-    
+
+
+/// deletion operation begun from the starting and from the end of the list
+
+    public void deleteFirst()
+    {
+        if(head == null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;               /// simple step point the head to next and assign it as new head
+    }
+
+    public void deleteLast()
+    {
+        if(head == null)
+        {
+            System.out.println("List is empty");           // when no node is available 
+            return; 
+        }
+        if(head.next == null)
+        {
+            head = null;                                 // only one node is present an importent coner case
+        }
+        Node seclast = head;                            // use of two node storing last and sec last then traverse till the last and then point the seeclast node to null
+        Node last = head.next;
+        while(last.next != null)
+        {
+            last =last.next;
+            seclast = seclast.next;
+        }
+        seclast.next = null;
+    }
     
     public static void main(String[] args)
     {
@@ -67,6 +102,9 @@ class LL { // an LL class is created
         list.addFirst("satya");
         list.addFirst("Smart");
         list.addLast("Sahu");
+        list.printList();
+        list.deleteFirst();
+        list.deleteLast();
         list.printList();
         
     }
