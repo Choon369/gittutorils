@@ -1,0 +1,34 @@
+import java.util.HashSet;
+import java.util.Iterator;
+
+ class hash
+ {
+     public static void main(String[] args)
+     {
+         HashSet<Integer> set = new HashSet<>();  //creation
+         
+         set.add(1);
+         set.add(2);                              // insertion
+         set.add(3);
+         set.add(1);                              //provided this example to explain set do not contain duplicate item
+         if(set.contains(1))                      //search
+         {
+             System.out.println("it contains 1");
+         }
+         if(!set.contains(5))
+         {
+             System.out.println("it contains 1");
+         }
+         set.remove(1);                           //deletion
+         System.out.println(set.size());          // size method
+         System.out.println(set);
+         Iterator it = set.iterator();            // set is unindexed unlike array so to iterate we use iterator class with iterator method 
+         while(it.hasNext())
+         {
+             System.out.println(it.next());       // and hasNext() method to cheack the the availablity of the next element and next() to access the next element;
+         }
+         
+         
+         
+     }
+ }
