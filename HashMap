@@ -1,0 +1,36 @@
+import java.util.*;
+
+class hash
+{
+    public static void main(String[] args)
+    {
+        HashMap<String,Integer> map= new HashMap<>();     //creation
+        map.put("India",120);
+        map.put("CHina",30);                              //insertion
+        map.put("USA",70);
+        System.out.println(map);
+        map.put("CHina",100);                             // if a key is already present the new value is updated
+        if(map.containsKey("CHina"))                      // seaching
+        {
+            System.out.println(map.get("CHina"));
+        }
+        for(Map.Entry<String,Integer> e:map.entrySet())   //Syntax Used for iteration capital M represent the class followed by Entry method ,entryset() method provide a set view of map
+        {
+            System.out.println(e.getValue());
+            System.out.println(e.getKey());                //fetching the values;
+        }
+        map.remove("CHina");                               // deletion
+        System.out.println(map);
+    }
+}
+
+Output
+{USA=70, CHina=30, India=120}          // from the output we can see though we fed india as first input USA is lissted firsst so we can say a map is unindexed
+100
+70
+USA
+100
+CHina
+120
+India
+{USA=70, India=120}
