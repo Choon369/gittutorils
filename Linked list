@@ -1,6 +1,6 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
-Linked list are the chain of node connected with each others by next address
+//Linked list are the chain of node connected with each others by next address
 
 class LL { // an LL class is created
     Node head;          //The first node is named as head remember never to change the head node during manipulation
@@ -95,16 +95,42 @@ class LL { // an LL class is created
         }
         seclast.next = null;
     }
+
+/// consider a linked list we take help of three nodes to perform this operation 
+
+    public void reverseList()
+    {
+        if(head.next==null || head ==null)
+        {
+            return;                        /// base case when only head node or no node is present
+        }
+        Node prev = head;                    // prev node contains the head node curr node contains the next address of head node while traversing 
+        Node curr = head.next;
+        while(curr!= null)
+        {
+            Node nextnode = curr.next;       //add a new node named next point the curr node address to next node or called naming 
+            curr.next = prev;               // curr node next is pointed to prev node 
+            
+            prev = curr;                     // this is an updating process where prev is named as curr and curr is new next 
+            curr= nextnode;
+        }
+        head.next = null;               /// maintaing the head value as always to the first node
+        head = prev;
+    }
     
     public static void main(String[] args)
     {
         LL list = new LL();                    /// A very imp step is to create a list is to create an object class name here LL is the class and list of name "list" is created
-        list.addFirst("satya");
-        list.addFirst("Smart");
+        list.addLast("satya");
+        list.addLast("Smart");
         list.addLast("Sahu");
+        list.addLast("Sau");
+        list.addLast("Shu");
+        
         list.printList();
-        list.deleteFirst();
         list.deleteLast();
+        list.deleteLast();
+        list.reverseList();
         list.printList();
         
     }
